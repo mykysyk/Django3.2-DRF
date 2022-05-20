@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'drf_spectacular',
     'rest_framework',
     'sample_app',
     'django.contrib.admin',
@@ -125,3 +126,13 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Swagger Sample App',
+    'DESCRIPTION': 'https://qiita.com/mykysyk@github/items/fef6fb298393a029a5d4',
+    'VERSION': '2022.5.20',
+}

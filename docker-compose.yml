@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  django:
+    container_name: django3.2
+    build: .
+    working_dir: /code
+    ports:
+        - "8000:8000"
+    command: >
+      sh -c "apk update &&
+             apk add bash &&
+             apk add git &&
+             python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
